@@ -11,6 +11,13 @@ public class Category {
 
     private String name;
 
+    public Object getName() {
+        return null;
+    }
+
+    public void setName(Object name) {
+    }
+
     // constructors, getters, and setters
 
     // getters and setters

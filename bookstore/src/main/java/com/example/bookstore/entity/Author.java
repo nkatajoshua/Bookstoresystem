@@ -11,7 +11,18 @@ public class Author {
 
     private String name;
 
-    // constructors, getters, and setters
+    // Constructor
+    public Author(String name) {
+        this.name = name;
+    }
 
-    // getters and setters
+    // Getter method for name
+    public String getName() {
+        return name;
+    }
+
+    // Setter method for name
+    public void setName(String name) {
+        this.name = name;
+    }
 }
