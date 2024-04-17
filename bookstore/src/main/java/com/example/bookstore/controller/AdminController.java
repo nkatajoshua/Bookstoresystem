@@ -5,16 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class BookController {
-
-    @GetMapping("/api/books")
-    public String getAllBooks() {
-        return "List of books";
-    }
+public class AdminController {
 
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping("/api/books/create")
-    public String createBook() {
-        return "Create a new book";
+    @GetMapping("/api/admin/books")
+    public String getAllBooksForAdmin() {
+        return "List of books for admin";
     }
 }
