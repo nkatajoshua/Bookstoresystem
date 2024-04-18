@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bookstore.springbookproject.entity.Author;
-
-import AuthorRepository;
+import com.bookstore.springbookproject.repository.AuthorRepository;
 
 @RestController
 @RequestMapping("/api/authors")
