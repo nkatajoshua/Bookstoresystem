@@ -12,16 +12,33 @@ public class Book {
     private String title;
 
     @ManyToOne
-    @JoinColumn(name = "author_id", nullable = false)
-    private String author;
+    @JoinColumn(name = "author_id") // Define the column name for the foreign key
+    private Author author;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private String category;
+    @JoinColumn(name = "category_id") // Define the column name for the foreign key
+    private Category category;
 
-    private double price;
+    // Constructors
+    public Book() {
+        // Default constructor
+    }
 
-    // constructors, getters, and setters
+    public Book(String title, Author author, Category category) {
+        this.title = title;
+        this.author = author;
+        this.category = category;
+    }
+
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -30,29 +47,19 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return String.valueOf(author);
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
-    public String getCategory() {
-        return category.toString();
+    public Category getCategory() {
+        return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    // getters and setters
 }

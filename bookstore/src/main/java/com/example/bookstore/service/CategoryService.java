@@ -1,18 +1,35 @@
 package com.example.bookstore.service;
 
 import com.example.bookstore.entity.Category;
-
+import com.example.bookstore.repository.CategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
-public interface CategoryService {
+@Service
+public class CategoryService {
 
-    List<Category> getAllCategories();
+    private final CategoryRepository categoryRepository;
 
-    Category getCategoryById(Long id);
+    @Autowired
+    public CategoryService(CategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
 
-    Category createCategory(Category category);
+    public List<Category> getAllCategories() {
+        return categoryRepository.findAll();
+    }
 
-    Category updateCategory(Long id, Category category);
+    public Optional<Category> getCategoryById(Long id) {
+        return categoryRepository.findById(id);
+    }
 
-    void deleteCategory(Long id);
+    public Category saveCategory(Category category) {
+        return categoryRepository.save(category);
+    }
+
+    public void deleteCategory(Long id) {
+        categoryRepository.deleteById(id);
+    }
 }

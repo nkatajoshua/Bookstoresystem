@@ -11,14 +11,29 @@ public class Category {
 
     private String name;
 
-    public Object getName() {
-        return null;
+    // Constructors
+    public Category() {
+        // Default constructor
     }
 
-    public void setName(Object name) {
+    public Category(String name) {
+        this.name = name;
     }
 
-    // constructors, getters, and setters
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
 
-    // getters and setters
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

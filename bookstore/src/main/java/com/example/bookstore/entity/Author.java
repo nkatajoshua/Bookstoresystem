@@ -11,17 +11,28 @@ public class Author {
 
     private String name;
 
-    // Constructor
+    // Constructors
+    public Author() {
+        // Default constructor
+    }
+
     public Author(String name) {
         this.name = name;
     }
 
-    // Getter method for name
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
 
-    // Setter method for name
     public void setName(String name) {
         this.name = name;
     }

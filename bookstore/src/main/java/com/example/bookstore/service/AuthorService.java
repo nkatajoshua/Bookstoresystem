@@ -1,18 +1,35 @@
 package com.example.bookstore.service;
 
 import com.example.bookstore.entity.Author;
-
+import com.example.bookstore.repository.AuthorRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
-public interface AuthorService {
+@Service
+public class AuthorService {
 
-    List<Author> getAllAuthors();
+    private final AuthorRepository authorRepository;
 
-    Author getAuthorById(Long id);
+    @Autowired
+    public AuthorService(AuthorRepository authorRepository) {
+        this.authorRepository = authorRepository;
+    }
 
-    Author createAuthor(Author author);
+    public List<Author> getAllAuthors() {
+        return authorRepository.findAll();
+    }
 
-    Author updateAuthor(Long id, Author author);
+    public Optional<Author> getAuthorById(Long id) {
+        return authorRepository.findById(id);
+    }
 
-    void deleteAuthor(Long id);
+    public Author saveAuthor(Author author) {
+        return authorRepository.save(author);
+    }
+
+    public void deleteAuthor(Long id) {
+        authorRepository.deleteById(id);
+    }
 }
