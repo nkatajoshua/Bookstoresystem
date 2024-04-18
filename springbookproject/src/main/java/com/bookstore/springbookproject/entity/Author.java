@@ -33,12 +33,12 @@ public class Author {
     }
 
     public Object getCountry() {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'getCountry'");
     }
 
     public void setCountry(Object country) {
-        // TODO Auto-generated method stub
+        
         throw new UnsupportedOperationException("Unimplemented method 'setCountry'");
     }
 }
