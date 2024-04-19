@@ -1,31 +1,33 @@
 # Bookstoresystem
-Simplified Project Structure following the implementation of CRUD
+Simplified sample Project Structure 
 
-com.bookstore.springbookproject
-├── controller
-│   ├── BookController.java
-│   ├── AuthorController.java
-│   └── CategoryController.java
-├── model
-│   ├── Book.java
-│   ├── Author.java
-│   └── Category.java
-├── repository
-│   ├── BookRepository.java
-│   ├── AuthorRepository.java
-│   └── CategoryRepository.java
-├── service
-│   ├── BookService.java
-│   ├── AuthorService.java
-│   └── CategoryService.java
-├── security
-│   ├── JwtAuthenticationEntryPoint.java
-│   ├── JwtRequestFilter.java
-│   ├── JwtTokenUtil.java
-│   └── JwtUserDetailsService.java
-├── config
-│   └── SecurityConfig.java
-└── SpringBookProjectApplication.java
+springbookproject/
+├── src/
+│   ├── main/
+│   │   └── java/
+│   │       └── com/
+│   │           └── bookstore/
+│   │               └── springbookproject/
+│   │                   ├── controller/
+│   │                   │   └── BookController.java
+│   │                   ├── entity/
+│   │                   │   └── Book.java
+│   │                   ├── repository/
+│   │                   │   └── BookRepository.java
+│   │                   └── service/
+│   │                       └── BookService.java
+│   └── test/
+│       └── java/
+│           └── com/
+│               └── bookstore/
+│                   └── springbookproject/
+│                       ├── controller/
+│                       │   └── BookControllerTest.java
+│                       ├── service/
+│                       │   └── BookServiceTest.java
+│                       └── SpringbookprojectApplicationTests.java
+└── pom.xml
+
 
 IMPORTANCE
 Authentication and Authorization:
@@ -36,3 +38,28 @@ Database Configuration:
 Set up database connection and entity mappings in application.properties and entity classes (Book, Author, Category).
 Error Handling:
 Implement global exception handling using @ControllerAdvice to handle exceptions gracefully.
+
+# Library Management System
+
+## Project Setup
+1. Clone the repository.
+2. Configure database settings in `application.properties`.
+3. Run the application using `./mvnw spring-boot:run` (Maven) or `./gradlew bootRun` (Gradle).
+
+## Architecture
+The application follows a layered architecture:
+- Controller layer: Handles incoming HTTP requests.
+- Service layer: Implements business logic.
+- Repository layer: Interacts with the database using Spring Data JPA.
+
+## Design Decisions
+- Authentication and authorization implemented using Spring Security.
+- RESTful API design adheres to industry best practices.
+- H2 database used for development (configured in-memory).
+
+## API Usage
+### Books
+- GET `/api/books`: Get all books.
+- GET `/api/books/{id}`: Get book by ID.
+- POST `/api/books`: Create a new book.
+- DELETE `/api/books/{id}`: Delete book by ID.

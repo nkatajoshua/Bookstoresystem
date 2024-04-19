@@ -4,26 +4,23 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
-public class Book {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @NotBlank
-    private String title;
+    private String username;
     
-    @ManyToOne
-    @NotNull
-    private Author author;
+    @NotBlank
+    private String password;
+
+    public static Object builder() {
+        throw new UnsupportedOperationException("Unimplemented method 'builder'");
+    }
     
-    @ManyToOne
-    @NotNull
-    private Category category;
-    
-    // getters and setters
+    // other user details and getters/setters
 }
